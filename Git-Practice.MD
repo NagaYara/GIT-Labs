@@ -2,7 +2,8 @@ GIT Practice
 
 GITHUB
     Step 1
-        Create a repository (public) (shell-script) # my-shell-scripts repository created
+        Create a Public/ Private repository # 
+            Repository created with the name of shell-script
 
 GITBASH
     step 2
