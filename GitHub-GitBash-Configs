@@ -1,1 +1,59 @@
+1. create a repo in GitHub
+	Login to GitHub
+	Add New Repository and name it
 
+2. clone into your laptop
+	Install GitBash Client, 
+	Create a folder in your laptop for repositories (Ref. Users/Admin/DevOps/Repos)
+	cd Users/Admin/DevOps/Repos
+	git clone <Repo-https-URL> # get the repository (Ref. shell-scripts) URL from GitHub Portal
+	Now you will get the repositories into the Repos Directory # check shell-script folder is created along with the files
+	cd <repo-folder> # shell-script is the repository created in GitHub
+	Admin@DESKTOP-62IU1SE MINGW64 /c/DevOps/Repos/shell-scripts (main)
+
+3. select the main branch
+	git branch -M master # Optional, you can keep the branch name as main also. But for a better naming convention using master branch
+	Admin@DESKTOP-62IU1SE MINGW64 /c/DevOps/Repos/shell-scripts (master)
+
+4. Do some coding (in VS Code)
+	Install Visual Studio Code
+	From VSC: File -> Open Folder -> Select the Folder where your repos are presented
+	You can see the repository # shell-scripts
+	make some changes in the coding and save it
+	Go to the GitBash and run the command 
+	a. $ git add <file-name> # It will be saving the changes into the staging area/ temp area
+	b. $ git commit -m # It's committing the changes into the local repo. To understand who did this change, need to provide your account ID		
+		$ git config --global user.email "<Git account mail ID>"
+	c. $ git commit -m "Test commit"
+	d. $ git push origin master # pust changes to the central repo, origin means central repo, the master is the branch name
+		It will ask for the username and password because you should have the authentication to push the changes
+		for this, we have multiple mechanisms to authenticate
+		- You can click on sign in with your browser
+		- Another option is SSH Authentication
+			1. Import the public key into the GitHub server
+			2. create a file called config without any extensions in the .ssh folder inside the user directory
+				# yrnp2355@gmail.com
+				Host github.com
+				  HostName github.com
+				  User git
+				  IdentityFile ~/.ssh/devops.pem
+			3. git clone <ssh-URL>
+				
+5. If you have an existing folder, how can you push to GitHub
+	1. git init
+	2. create a repo in the GitHub server
+	connect git local repo and central repo through
+		git remote add origin <make-sure-you-use-ssh-url>
+		git remote add origin git@github.com:NagaYara/concepts.git
+	#changing the URL - If you want to change the URL from HTTP to SSH for example you can run the below command
+	git remote set-url origin git@github.com:NagaYara/shell-scripts.git
+		
+
+git clone <URL>		--> Clone the code to your computer
+git add	<file-name>	--> to add files to the staging area
+git commit -m "message"	--> commit to a local repo
+git push origin master	--> Push changes to Central repo
+		
+$ git log # to see the entire history (commits) 
+
+Workspace (Your Laptop) -> Staging Area (Temporary Area) -> Local Repo -> Central Repo (Main / Master Repo)
